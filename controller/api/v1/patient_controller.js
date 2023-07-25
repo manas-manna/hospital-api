@@ -122,7 +122,7 @@ module.exports.status = async function (req, res) {
         path: "doctor",
         select: ["name"],
       });
-    if (patients) {
+    if (patients.length>0) {
       patients.map((patient) => {
         if (patient.status == "neg") {
           status = "Negative";
