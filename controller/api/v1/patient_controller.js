@@ -99,7 +99,7 @@ module.exports.updatestatus = async function (req, res) {
       });
     }
     else {
-      patient  = await patient.updateOne({ phone : req.params.phone}, {status: req.body.newstatus});
+      patient  = await Patient.updateOne({ phone : req.params.phone}, {status: req.body.newstatus});
       return res.status(200).json({
         message: "Patient status updated.Here are the updated details",
         data: patient,
