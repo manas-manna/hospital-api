@@ -92,12 +92,15 @@ module.exports.reportAll = async function (req, res) {
 
 module.exports.updatestatus = async function (req, res) {
   try {
-    let patient = await Patient.findOneAndUpdate(
-      { phone: req.params.phone },
-      { status: req.body.newstatus }
-    );
-
-    if (patient) {
+    let patient = await Patient.findOne({ phone: req.params.phone });
+    if(!patient){
+      return res.status(404).json({
+        message: "Patient not found.Kindly verify the phone number"
+      });
+    }
+    else {
+      patient.status = req.body.newstatus;
+      patient.save();
       return res.status(200).json({
         message: "Patient status updated.Here are the updated details",
         data: patient,
