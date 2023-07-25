@@ -49,11 +49,11 @@
     <ul>
       <h2>***For Doctor***</h2>
       <li>
-        <b>api/v1/doctor/register</b> : This will handle the registration of new
+        <b>api/v1/doctor/register</b> : This(POST request) will handle the registration of new
         doctor
       </li>
       <li>
-        <b>api/v1/doctor/login</b> : This is create the jwt token which is
+        <b>api/v1/doctor/login</b> : This(GET request) is create the jwt token which is
         required to perform all patients related operations.
       </li>
     </ul>
@@ -69,26 +69,26 @@
         </h4></i
       >
       <li>
-        <b>api/v1/patients/register</b> : This will handle the registration of
+        <b>api/v1/patients/register</b> : This(GET request) will handle the registration of
         new patient.
       </li>
       <li>
-        <b>api/v1/patients/create_report/:phone </b>: This will generate the
+        <b>api/v1/patients/create_report/:phone </b>: This(GET request) will generate the
         report of a particular patient.Pass the phone number of the patient in
         params.
       </li>
       <li>
-        <b>api/v1/patients/all_reports</b> : This will genarate all patients
+        <b>api/v1/patients/all_reports</b> : This(GET request) will genarate all patients
         report.No need to pass any phone number
       </li>
       <li>
-        <b>api/v1/patients/update_status/:phone </b>: This will update the
+        <b>api/v1/patients/update_status/:phone </b>: This(GET request) will update the
         current checkup status of the patient.Pass the phone number of the
         patient in params.Also add a key 'newstatus' in the body and the value
         should be new status.
       </li>
       <li>
-        <b>api/v1/patients/status/:status </b>: This is generate all the patient
+        <b>api/v1/patients/status/:status </b>: This(GET request) is generate all the patient
         report of a particular status.Pass the state code in the params.
       </li>
     </ul>

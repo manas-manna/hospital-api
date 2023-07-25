@@ -100,7 +100,7 @@ module.exports.reportAll = async function (req, res) {
 //handling the status change for patients(extra feature)
 module.exports.updatestatus = async function (req, res) {
   try {
-    let patient = await Patient.findOne({ phone: req.params.phone });
+    var patient = await Patient.findOne({ phone: req.params.phone });
     if(!patient){
       return res.status(404).json({
         message: "Patient not found.Kindly verify the phone number"
