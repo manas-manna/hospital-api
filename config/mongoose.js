@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // connect to the database
-mongoose.connect('mongodb+srv://manas:manas123@cluster0.j932clv.mongodb.net/todolist?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://manas:manas123@cluster0.j932clv.mongodb.net/hospitalapi?retryWrites=true&w=majority');
 
 
 // aquire the connection (to check if it is successful)

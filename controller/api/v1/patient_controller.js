@@ -1,5 +1,7 @@
 const Patient = require("../../../models/patient");
 
+
+//handling new patient registration
 module.exports.create = async function (req, res) {
   try {
     let patient = await Patient.findOne({ phone: req.body.phone });
@@ -25,12 +27,16 @@ module.exports.create = async function (req, res) {
   }
 };
 
+
+//handling individual patient report generation
 module.exports.report = async function (req, res) {
   try {
     let patient = await Patient.findOne({ phone: req.params.phone }).populate({
       path: "doctor",
-      select: ["name"],
+      select: ["name"],    //this will only give the name of the doctor and not the entire doctor details
     });
+
+    //converting each status code to respective full status name
     if (patient) {
       if (patient.status == "neg") patient.status = "Negative";
       else if (patient.status == "trav-quar")
@@ -55,10 +61,11 @@ module.exports.report = async function (req, res) {
   }
 };
 
+//handling report generation of all patients
 module.exports.reportAll = async function (req, res) {
   try {
     let patients = await Patient.find({})
-      .sort({ createdAt: 1 })
+      .sort({ createdAt: 1 })      //sorting ascending
       .populate({
         path: "doctor",
         select: ["name"],
@@ -90,6 +97,7 @@ module.exports.reportAll = async function (req, res) {
   }
 };
 
+//handling the status change for patients(extra feature)
 module.exports.updatestatus = async function (req, res) {
   try {
     let patient = await Patient.findOne({ phone: req.params.phone });
@@ -113,6 +121,7 @@ module.exports.updatestatus = async function (req, res) {
   }
 };
 
+//handling the report generation of all patients of particular status
 module.exports.status = async function (req, res) {
   try {
     let status;

@@ -6,8 +6,11 @@ const passport = require('passport');
 
 app.use(express.urlencoded({extended: false}));
 
+//all routes will be forwarded to routes folder
 app.use('/',require('./routes'));
 
+
+//server running
 app.listen(port,function(err){
     if(err){
         console.log("error in creating server",err);

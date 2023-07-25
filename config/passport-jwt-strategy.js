@@ -8,6 +8,7 @@ let opts = {
   secretOrKey: "verysecret",
 };
 
+//the authentication using the Bearer token is handled here
 passport.use(
   new JWTStrategy(opts,async function (jwtPayLoad, done) {
     try{
