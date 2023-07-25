@@ -81,7 +81,7 @@ module.exports.reportAll = async function (req, res) {
           return (patient.status = "Positive-Admit");
       });
       return res.status(200).json({
-        message: "All patient report generated",
+        message: "All "+patients.length+" patient report generated",
         data: patients,
       });
     } else {
@@ -149,7 +149,7 @@ module.exports.status = async function (req, res) {
       });
       return res.status(200).json({
         message:
-          "All patient with status " + status + " report generated",
+          "All "+patients.length+" patient with status " + status + " report generated",
         data: patients,
       });
     } else {
