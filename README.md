@@ -7,7 +7,7 @@ Now you can start the project using
 
 *************For testing using the hosted url*************
 the api is hosted on "https://hospitalapi-yb7y.onrender.com/"
-This will open the main site where some details are given
+This will open the homepage where some details are given
 
 Below are the list of working routes which you can test using postman
 
