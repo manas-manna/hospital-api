@@ -10,7 +10,6 @@
   "author": "Manas",
   "license": "ISC",
   "dependencies": {
-    "crypto": "^1.0.1",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.4.1",
